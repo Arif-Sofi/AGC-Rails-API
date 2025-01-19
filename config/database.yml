@@ -22,7 +22,7 @@ default: &default
 
 development:
   <<: *default
-  database: agc_rails_api_development
+  database: AGC
   username: <%= ENV["AGC_RAILS_API_DATABASE_USERNAME"] %>
   password: <%= ENV["AGC_RAILS_API_DATABASE_PASSWORD"] %>
 
