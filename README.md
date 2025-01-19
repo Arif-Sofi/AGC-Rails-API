@@ -1,24 +1,20 @@
-# README
+# AGC バックエンド (apiサーバー)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## プロジェクト概要
 
-Things you may want to cover:
+このリポジトリは、アニメゲームセンター (AGC) ウェブサイトのバックエンドAPIです。ユーザーがアニメキャラクターや感情を検索し、関連するアニメシーンの情報を取得できるようにします。
 
-* Ruby version
+## セットアップ
 
-* System dependencies
+このバックエンドを起動するには、事前に Ruby, Rails, PostgreSQL がインストールされている必要があります。
 
-* Configuration
+**リポジトリをクローン:**
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+   ```bash
+   git clone https://github.com/Arif-Sofi/AGC-Rails-API
+   cd AGC-Rails-API
+   ```
+   データベースを設定: config/database.yml を編集し、PostgreSQLの設定を記述してください。
+   ```bash
+   rails db:migrate db:seed
+   rails server
