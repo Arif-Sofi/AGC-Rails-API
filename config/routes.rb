@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get "scenes/index"
+  get "scenes/show"
+  get "emotions/index"
+  get "emotions/show"
+  get "characters/index"
+  get "characters/show"
   namespace :api do
     namespace :v1 do
       resources :anime, only: [:index, :show]

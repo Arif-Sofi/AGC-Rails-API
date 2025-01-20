@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_19_064636) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_20_120954) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -20,4 +20,31 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_19_064636) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "emotions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scenes", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.bigint "emotion_id", null: false
+    t.bigint "anime_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anime_id"], name: "index_scenes_on_anime_id"
+    t.index ["character_id"], name: "index_scenes_on_character_id"
+    t.index ["emotion_id"], name: "index_scenes_on_emotion_id"
+  end
+
+  add_foreign_key "scenes", "animes"
+  add_foreign_key "scenes", "characters"
+  add_foreign_key "scenes", "emotions"
 end

@@ -1,7 +1,5 @@
 class Anime < ApplicationRecord
-    validates :title, presence: true
-    validates :description, presence: true
-
-    attribute :title, :string
-    attribute :description, :text
+    has_many :characters
+    has_many :scenes
+    has_many :emotions, through: :scenes
 end
