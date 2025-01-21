@@ -23,8 +23,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_20_120954) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
+    t.bigint "anime_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["anime_id"], name: "index_characters_on_anime_id"
   end
 
   create_table "emotions", force: :cascade do |t|
@@ -44,6 +46,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_20_120954) do
     t.index ["emotion_id"], name: "index_scenes_on_emotion_id"
   end
 
+  add_foreign_key "characters", "animes"
   add_foreign_key "scenes", "animes"
   add_foreign_key "scenes", "characters"
   add_foreign_key "scenes", "emotions"
