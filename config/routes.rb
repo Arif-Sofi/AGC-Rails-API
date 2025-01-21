@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  get "scenes/index"
-  get "scenes/show"
-  get "emotions/index"
-  get "emotions/show"
-  get "characters/index"
-  get "characters/show"
   namespace :api do
     namespace :v1 do
       resources :anime, only: [:index, :show]
+      resources :character, only: [:index, :show]
+      resources :scene, only: [:index, :show]
+      resources :emotion, only: [:index, :show]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
