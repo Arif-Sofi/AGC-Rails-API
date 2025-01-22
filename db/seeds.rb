@@ -11,7 +11,8 @@
 require_relative 'seeders/anime_seeder'
 require_relative 'seeders/character_seeder'
 require_relative 'seeders/emotion_seeder'
+require_relative 'seeders/scene_seeder'
 AnimeSeeder.seed
 CharacterSeeder.seed
 EmotionSeeder.seed
-# SceneSeeder.seed
+SceneSeeder.seed

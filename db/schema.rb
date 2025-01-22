@@ -36,6 +36,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_20_120954) do
   end
 
   create_table "scenes", force: :cascade do |t|
+    t.string "audio_url"
+    t.string "image_url"
     t.bigint "character_id", null: false
     t.bigint "emotion_id", null: false
     t.bigint "anime_id", null: false

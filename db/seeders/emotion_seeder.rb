@@ -11,5 +11,9 @@ module EmotionSeeder
       Emotion.create!(
         name: "Angry",
       )
+
+      Emotion.create!(
+        name: "Surprised",
+      )
     end
   end
