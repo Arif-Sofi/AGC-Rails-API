@@ -1,4 +1,4 @@
-class Api::V1::SceneCotroller < ApplicationController
+class Api::V1::SceneController < ApplicationController
   def index
     @scenes = Scene.all
     render json: @scenes
